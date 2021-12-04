@@ -2,6 +2,7 @@ import axios from 'axios';
 import { config } from 'dotenv';
 config();
 
+console.time('task');
 (async () => {
     let day = new Date().getDate();
     let data = (
@@ -19,3 +20,4 @@ config();
     if (task.part2) console.log(task.part2(data));
     else console.log(task.part1(data));
 })();
+console.timeEnd('task');
