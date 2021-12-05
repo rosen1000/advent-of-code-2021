@@ -2,8 +2,8 @@ import axios from 'axios';
 import { config } from 'dotenv';
 config();
 
-console.time('task');
 (async () => {
+    console.time('task');
     let day = new Date().getDate();
     let data = (
         await axios.get(`https://adventofcode.com/2021/day/${day}/input`, {
@@ -19,5 +19,5 @@ console.time('task');
 
     if (task.part2) console.log(task.part2(data));
     else console.log(task.part1(data));
+    console.timeEnd('task');
 })();
-console.timeEnd('task');
